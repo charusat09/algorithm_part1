@@ -1,17 +1,14 @@
+require '../helpers/file_operations.rb'
+require '../helpers/logger.rb'
+
 class QuickFind
+  include FileOperations
+  include Logger
+
   attr_accessor :input
 
   def initialize(n)
     @input = [*(0..n)]
-  end
-
-  def generate_input_file(n)
-    file = File.open("qf_1k.txt",mod='w')
-    n.times {|i| p = Random.new.rand(i+1);file.syswrite("#{p}\n")}
-  end
-
-  def read_file
-    IO.foreach("qf_1k.txt"){|block| union(block.to_i,block.to_i+1)}
   end
 
   def union(p,q)
@@ -42,14 +39,21 @@ class QuickFind
 
 end
 
-N = 16000
-qf = QuickFind.new(N)
-qf.generate_input_file(N)
+bench_mark = [
+              {'N' => 2000, 'name' => 'qu', 'size' => '2k','p' => Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
+              {'N' => 4000, 'name' => 'qu', 'size' => '4k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
+              {'N' => 8000, 'name' => 'qu', 'size' => '8k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
+              {'N' => 16000, 'name' => 'qu', 'size' => '16k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
+              {'N' => 32000, 'name' => 'qu', 'size' => '32k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)}
+            ]
+bench_mark.each do |bench|
+  n = bench['N']
+  name = bench['name']
+  size = bench['size']
+  p = bench['p']
+  q = bench['q']
 
-t1 = Time.now
+  qf = QuickFind.new(n)
 
-qf.read_file
-qf.is_connected?(1,5)
-
-t2 = Time.now
-puts " input size: #{N} & time: #{t2-t1}"
+  qf.log(n,name,size,qf,p,q)
+end

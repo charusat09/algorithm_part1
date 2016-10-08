@@ -23,6 +23,8 @@ class QuickUnion
 		pid == qid ? "wolla .. they are connected" : "sorry... try again"
 	end
 
+	private
+	
 	def root(i)
 		i = objects[i] while(i != objects[i])
 		return i

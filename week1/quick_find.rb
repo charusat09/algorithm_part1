@@ -40,11 +40,11 @@ class QuickFind
 end
 
 bench_mark = [
-              {'N' => 2000, 'name' => 'qu', 'size' => '2k','p' => Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
-              {'N' => 4000, 'name' => 'qu', 'size' => '4k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
-              {'N' => 8000, 'name' => 'qu', 'size' => '8k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
-              {'N' => 16000, 'name' => 'qu', 'size' => '16k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
-              {'N' => 32000, 'name' => 'qu', 'size' => '32k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)}
+              {'N' => 2000, 'name' => 'qf', 'size' => '2k','p' => Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
+              {'N' => 4000, 'name' => 'qf', 'size' => '4k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
+              {'N' => 8000, 'name' => 'qf', 'size' => '8k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
+              {'N' => 16000, 'name' => 'qf', 'size' => '16k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)},
+              {'N' => 32000, 'name' => 'qf', 'size' => '32k','p' =>Random.new.rand(2000), 'q'=> Random.new.rand(2000)}
             ]
 bench_mark.each do |bench|
   n = bench['N']

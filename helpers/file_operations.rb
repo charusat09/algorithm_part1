@@ -9,9 +9,10 @@ module FileOperations
   end
 
   def read_file(options={})
+    n = options.fetch('n',1000)
   	name = options.fetch('name','algo')
 		size = options.fetch('size','1k')
 
-    IO.foreach("files/#{name}_#{size}.txt"){|block| union(block.to_i,block.to_i+1)}
+    IO.foreach("files/#{name}_#{size}.txt"){|block| self.union(block.to_i,block.to_i+1) if block.to_i <= n - 1}
   end
 end

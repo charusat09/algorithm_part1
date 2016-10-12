@@ -36,20 +36,17 @@ class QuickFind
 end
 
 bench_mark = [
-              {'N' => 2000, 'name' => 'qf', 'size' => '2k'},
-              {'N' => 4000, 'name' => 'qf', 'size' => '4k'},
-              {'N' => 8000, 'name' => 'qf', 'size' => '8k'},
-              {'N' => 16000, 'name' => 'qf', 'size' => '16k'},
-              {'N' => 32000, 'name' => 'qf', 'size' => '32k'}
+              {'N' => 2000},
+              {'N' => 4000},
+              {'N' => 8000},
+              {'N' => 16000},
+              {'N' => 32000}
             ]
+            
 bench_mark.each do |bench|
   n = bench['N']
-  name = bench['name']
-  size = bench['size']
   p = 335 # can pick any value from data file under files/
   q = 553 # can pick any value from data file under files/
-
   qf = QuickFind.new(n)
-
-  qf.log(n,name,size,qf,p,q)
+  qf.log(qf,p,q,n)
 end

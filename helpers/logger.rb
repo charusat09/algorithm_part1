@@ -1,10 +1,8 @@
 module Logger
-  def log(n,name,size,object,p,q)
-    inputs = { 'n' => n, 'name' => name, 'size' => size}
-
+  def log(object,p,q,n)
     t1 = Time.now
 
-    object.read_file(inputs)
+    object.read_file
 
     puts object.is_connected?(p,q)
 

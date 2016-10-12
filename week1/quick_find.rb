@@ -46,8 +46,8 @@ bench_mark.each do |bench|
   n = bench['N']
   name = bench['name']
   size = bench['size']
-  p = 335 # can peak any value from data file under files/
-  q = 553 # can peak any value from data file under files/
+  p = 335 # can pick any value from data file under files/
+  q = 553 # can pick any value from data file under files/
 
   qf = QuickFind.new(n)
 

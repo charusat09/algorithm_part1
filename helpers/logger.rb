@@ -1,20 +1,18 @@
 module Logger
-	def log(n,name,size,object,p,q)
-		inputs = { 'n' => n, 'name' => name, 'size' => size}
+  def log(n,name,size,object,p,q)
+    inputs = { 'n' => n, 'name' => name, 'size' => size}
 
-		object.generate_input_file(inputs)
+    t1 = Time.now
 
-		t1 = Time.now
+    object.read_file(inputs)
 
-		object.read_file(inputs)
+    puts object.is_connected?(p,q)
 
-		puts object.is_connected?(p,q)
+    t2 = Time.now
 
-		t2 = Time.now
-
-		puts "p : #{p} \nq : #{q}"
-		puts "input size: #{n} \ntime taken: #{t2-t1} \n "
-		puts "******************************"
-	end
+    puts "p : #{p} \nq : #{q}"
+    puts "input size: #{n} \ntime taken: #{t2-t1} \n "
+    puts "******************************"
+  end
 
 end

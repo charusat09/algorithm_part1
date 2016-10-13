@@ -1,9 +1,11 @@
-require '../helpers/file_operations.rb'
-require '../helpers/logger.rb'
+$: << File.join(File.expand_path(File.dirname(__FILE__)), '..', 'helpers')
+
+require 'file_operations'
+require 'logme'
 
 class QuickUnion
   include FileOperations
-  include Logger
+  include LogMe
 
   attr_accessor :objects
   

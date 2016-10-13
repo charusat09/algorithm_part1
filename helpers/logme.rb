@@ -1,4 +1,4 @@
-module Logger
+module LogMe
   def log(object,p,q,n)
     t1 = Time.now
 

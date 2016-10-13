@@ -10,7 +10,9 @@ module FileOperations
   end
 
   def read_file(options={})
-    IO.foreach("files/mediumUF.txt") do |block| 
+    path = File.expand_path(File.join(File.dirname(__FILE__), '..', 'week1', 'files', 
+                                                           'mediumUF.txt'))
+    IO.foreach(path) do |block| 
       input = block.split(" ")
       p , q = input[0].to_i, input[1].to_i
       self.union(p,q) unless self.is_connected?(p,q)

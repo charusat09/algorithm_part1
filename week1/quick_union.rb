@@ -1,7 +1,4 @@
-$: << File.join(File.expand_path(File.dirname(__FILE__)), '..', 'helpers')
-
-require 'file_operations'
-require 'logme'
+require File.expand_path(File.join(File.dirname(__FILE__), 'week1_helper.rb'))
 
 class QuickUnion
   include FileOperations
